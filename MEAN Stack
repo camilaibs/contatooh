@@ -1,0 +1,168 @@
+MEAN Stack
+
+- complete development stack which use a unique language
+
+M - MongoDB (database nosql) JSON (Javascript Object Notation)
+E - Express server/backend web framework (REST endpoints by routes) MVC
+A - Angular client/frontend web framework MVC
+N - Node
+
+NODE
+~fundação
+- npm: package manager
+
+Advantages
+- time integration
+- converters
+- performance: onera menos o servidor
+
+BOWER - manager frontend dependencies
+Mongoose
+Grunt - automatiza tarefas de otimização
+
+karma/Jasmine - testes automatizados
+Protactor - testes end-to-end
+Travis - servidor de integração contínua - projetos open source
+ -> deployer - if buil success && test pass (foreach commit a deploy)
+Saouce Lab - Taas test as a service - projects open souce
+OpenShif - PaaS platform as a service
+
+scaffold - aceleram o tempo de desenvolvimento (gerador de código)
+
+ubuntu - command line (node /nodejs)
+
+EXPRESS
+- middlewares - function respose request (chain segurança, loggins, auditoria...)
+instalar módulos com npm, assim cada um poderá ser corrigido sem interferir nas versões do Express
+- views
+- rotas
+
+project structure
+app
+  controllers
+  models
+  routes
+  views
+config
+public
+
+/root - package.json
+- project informations + dependencies
+
+npm install moduleName@versionNumber --save (include dependency + version into package.json for not distribud node_modules)
+npm install downloand dependencies
+
+install node
+install express
+config express
+
+require functions - get instance of de modules dependency/ load
+
+express configurations
+- enviroments variables - default configurations - function app.set('chave', 'value');
+- 
+
+./ pasta onde o script foi executado
+
+EJS template engine
+
+nodemon - não reiniciar o servidor a cada alteração
+
+express-load
+important!
+1) load order
+2) defauld directory
+
+REST - operações com recursos de informação com http
+- resource: id (URL)
+- operations:
+    get(app.get), post(app.post), update(app.update) and delete(app.delete)
+
+res.send
+res.status
+res.json
+
+BOWER
+-gerencia tarefas e dependencias de frontend
+
+npm install .. -g, acessivel em qualquer pasta via terminal
+
+bower <command> [<args>] [<options>]
+
+inicializar
+
+bower install library#version --save
+
+bilbioteca frontend tem que estar dentro da pasta public -> alterar diretório padrão do bower
+
+bower install para instalar as dependencias do bower.json (front)
+npm install para baixar as dependencias do package.json (back)
+
+one way data binding -> the view can just read {{}}
+two -> 
+
+ngRoutes -> associação de controles através de rotas
+congiguração no módulo principal
+
+ng-view -> page area where will be load partials
+
+import controller
+
+.otherwise -> rota padrão
+
+dependence injection -> by nome, the order is not important
+
+toda requisição ajax é assíncrona por natureza e nunca sabemos quando ela será concluída de fato.
+
+callback é aquela função que guarda a lógica que será chamada pela função asíncrona assim que ela for concluída
+
+podemos capturar o callback, seu resultado
+
+promisse é um objeto que fornecerá o resultado de uma ação
+
+$resource, obter uma referência para um recurso pelo seu identificador único
+operações:
+-query(callbackSuccess, callbackError)
+-get({id: routeParams.id}, callbackSuccess, callbackError)
+-$save()
+-delete({id: routeParams.id}, callbackSuccess, callbackError)
+
+MONGO
+
+mongo shell - client line command
+-> access: mongo --port 27017 --host localhost
+-> Ctrl + C: stop
+
+commands
+-show dbs -> list dbs of an instance
+-show collection -> list collerctions of the a db
+-use contatooh -> create a db
+-db -> print the currency db
+-db.contatos.insert(contato) -> create a collection and add a element
+-db.contatos.find() -> list all contacts (docments)/ return a cursor object
+-db.dropDatabase() = drop database
+-db.findOne() -> return the first element from collection
+
+the criteria is a JSON object
+
+-db.contatos.count() -> count/can by recieve criteria
+
+clauses
+$or
+$ne -> not
+
+ensureIndex({"chave" : 1/-1}) -> asc/desc
+getIndexes -> list all indexes
+dropIndex("indexName")
+remove(criterio) / just remove() delete all
+update(criterio, contato)
+
+composição -> use embedded document, pois um objeto não existe sem o outro
+
+mongo + node, install driver
+
+mongoose:
+- ODM library (Object-Document Modeler)
+- criação de esquema pela aplicação
+- relations manager
+- validations
